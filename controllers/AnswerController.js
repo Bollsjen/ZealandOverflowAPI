@@ -83,6 +83,26 @@ export default class AnswerController {
             res.json(manager.GetAllRepliesById(id))
         })
 
+
+
+        //
+        //  Get all Answer Replies by id
+        //
+        app.get(URI + '/Replies/by/answer/:id', (req, res) => {
+            let {id} = req.params
+        
+            try{
+                id = Number(id)
+            }catch(error){
+                res.status(400).send({message: 'Id has to be of type integer'})
+            }
+        
+            if(!Number.isInteger(id)) res.status(404).send({message: 'Id has to be of type integer'})
+            res.type('json')
+            res.charset = 'utf-8'
+            res.json(manager.GetAllRepliesByAnswerId(id))
+        })
+
         
         
         //
@@ -116,7 +136,6 @@ export default class AnswerController {
             res.charset = 'utf-8'
             res.json(manager.CreateReply(reply))
         })
-
         
         
         //
