@@ -11,19 +11,19 @@ export class UserManager{
     ]
 
     GetAllUsers(){
-        return UserRepository._users
+        return UserManager._users
     }
 
     GetUserById(id){
-        return UserRepository._users.filter(u => u.id == id)
+        return UserManager._users.filter(u => u.id == id)
     }
 
     CreateUser(user){
         UserRepository._users.push(user)
-        return UserRepository._users[UserRepository._users.length-1]
+        return UserManager._users[UserRepository._users.length-1]
     }
 
-    GetUserByUsername(username){
-        return UserRepository._users.find((u) => u.userName == username)
+    GetUserByUsernameAndPassword(username, password){
+        return UserManager._users.filter((u) => u.userName == username && u.password == password)
     }
 }

@@ -45,6 +45,13 @@ export default class AnswersRepository {
         return answer
     }
 
+    
+    CreateReply(reply){
+        reply.id = AnswersRepository._nextId++
+        AnswersRepository._replies.push(reply)
+        return reply
+    }
+
     UpdateAnswer(id, answer){
         if(!Number.isInteger(id) || !answer instanceof Answer){
             throw new TypeError('Expected an integer and an object of type Answer')

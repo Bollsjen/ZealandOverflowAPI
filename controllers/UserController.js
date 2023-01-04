@@ -35,15 +35,17 @@ export default class UserController {
 
 
         //
-        //    Get Users by username
+        //    Get Users by username and password
         //
-        app.get(URI + '/by/username/:username', (req, res) => {
-            let {username} = req.params
+        app.post(URI + '/signin', (req, res) => {
+            console.log('body', req.body)
+            let {username, password} = req.body
+            console.log('username', username)
         
-            if(typeof username !== 'string') res.status(404).send({message: 'Username has to be of type string'})
+            if(typeof username !== 'string'){ res.status(404).send({message: 'Username has to be of type string'}); return}
             res.type('json')
             res.charset = 'utf-8'
-            res.json(manager.GetUserById(id))
+            res.json(manager.GetUserByUsernameAndPassword(username,password))
         })
 
 

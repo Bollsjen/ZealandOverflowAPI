@@ -109,7 +109,8 @@ export default class AnswerController {
         //  Create Answer
         //
         app.post(URI, (req, res) => {
-            const {answer} = req.body
+            let {answer} = req.body
+            answer = JSON.parse(answer)
         
             if(!answer){
                 res.status(418).send({message: 'We need a body of at least one tag'})
@@ -126,10 +127,12 @@ export default class AnswerController {
         //  Create Answer Reply
         //
         app.post(URI + '/Replies', (req, res) => {
-            const {reply} = req.body
+            let {reply} = req.body
+            reply = JSON.parse(reply)
         
             if(!reply){
                 res.status(418).send({message: 'We need a body of at least one tag'})
+                return
             }
         
             res.type('json')

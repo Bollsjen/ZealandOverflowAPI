@@ -101,7 +101,8 @@ export class QuestionsController {
         //  Post create Question
         //
         app.post(URI, (req,res) => {
-            const {question} = req.body
+            let {question} = req.body
+            question = JSON.parse(question)
         
             if(!question){
                 res.status(418).send({message: 'We need a body of at least one tag'})

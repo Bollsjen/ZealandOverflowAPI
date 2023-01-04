@@ -8,10 +8,10 @@ export default class QuestionsManager {
         "Serviceøkonom", "Procesteknolog", "Laborant", "Logistikøkonom", "Jordbrugsteknolog", "Produktionsteknolog", "VVS-Installatør", "Byggetekniker", "IT-teknolog"
     ]
     static _questions = [
-        new Question(QuestionsManager._nextId++, UserManager._users[0], "Hvordan tjener jeg penge?", 0, "Jeg vil gerne vide lidt mere i detaljer om hvordan jeg kan tjene penge. Jeg kan forstå at jeg kan bruge penge ved at købe ting, men jeg ikke noget at sælge. Hvordan kan jeg så tjene penge?", 15, null, ["Penge", "Salg", "Tjene"]),
-        new Question(QuestionsManager._nextId++, UserManager._users[1], "Hvordan installerer jeg Visual Studio?", 2, "Jeg kan simpelthen ikke finde ud af Microsofts dokumentation. Jeg får hele tiden fejlen \"Ikke nok disk plads\" når jeg prøver at installere Visual Studio. Hvad skal jeg gøre?", 5, null, ["Visual Studio", "Installation", "Microsoft", "Data"]),
-        new Question(QuestionsManager._nextId++, UserManager._users[2], "Hvordan er det nu jeg titrerer?", 10, "Jeg står som et kæmpe spørgsmåltegn i loboratoriet og kan ikke huske hvad jeg skal bruge til titrering. Please hjælp mig", -5, null, ["Laboratorium", "Laborant", "Titrering"]),
-        new Question(QuestionsManager._nextId++, UserManager._users[3], "Hvordan får jeg PHP til at hente data fra databaser?", 2, "Jeg har siddet med dette problem længe og kan simpelt hen ikke finde ud af hvordan jeg får PHP til at hente data fra min database. Min database er en MySQL.", 24, null, ["PHP", "SQL", "MySQL", "Data"])
+        new Question(QuestionsManager._nextId++, UserManager._users[0], "Hvordan tjener jeg penge?", 0, "Jeg vil gerne vide lidt mere i detaljer om hvordan jeg kan tjene penge. Jeg kan forstå at jeg kan bruge penge ved at købe ting, men jeg ikke noget at sælge. Hvordan kan jeg så tjene penge?", 15, 47, null, ["Penge", "Salg", "Tjene"]),
+        new Question(QuestionsManager._nextId++, UserManager._users[1], "Hvordan installerer jeg Visual Studio?", 2, "Jeg kan simpelthen ikke finde ud af Microsofts dokumentation. Jeg får hele tiden fejlen \"Ikke nok disk plads\" når jeg prøver at installere Visual Studio. Hvad skal jeg gøre?", 5, 11, null, ["Visual Studio", "Installation", "Microsoft", "Data"]),
+        new Question(QuestionsManager._nextId++, UserManager._users[2], "Hvordan er det nu jeg titrerer?", 10, "Jeg står som et kæmpe spørgsmåltegn i loboratoriet og kan ikke huske hvad jeg skal bruge til titrering. Please hjælp mig", -5, 13, null, ["Laboratorium", "Laborant", "Titrering"]),
+        new Question(QuestionsManager._nextId++, UserManager._users[3], "Hvordan får jeg PHP til at hente data fra databaser?", 2, "Jeg har siddet med dette problem længe og kan simpelt hen ikke finde ud af hvordan jeg får PHP til at hente data fra min database. Min database er en MySQL.", 24, 87, null, ["PHP", "SQL", "MySQL", "Data"])
     ]
 
     GetAllEducations(){
