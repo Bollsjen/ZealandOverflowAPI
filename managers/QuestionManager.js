@@ -1,3 +1,4 @@
+import QReaction from "../models/QReaction.js"
 import { Question } from "../models/Question.js"
 import { UserManager } from "./UserManager.js"
 
@@ -14,6 +15,15 @@ export default class QuestionsManager {
         new Question(QuestionsManager._nextId++, UserManager._users[3], "Hvordan får jeg PHP til at hente data fra databaser?", 2, "Jeg har siddet med dette problem længe og kan simpelt hen ikke finde ud af hvordan jeg får PHP til at hente data fra min database. Min database er en MySQL.", 24, 87, null, ["PHP", "SQL", "MySQL", "Data"])
     ]
 
+    static _reaction = [
+        new QReaction(0, 0, 0, 1),
+        new QReaction(1,0,0,1),
+        new QReaction(2, 1, 1, -1),
+        new QReaction(3, 3, 1, -1),
+        new QReaction(4, 2, 3, 1),
+        new QReaction(5, 2, 2, -1),
+    ]
+
     GetAllEducations(){
         return QuestionsManager._fulltimeEducations
     }
@@ -23,6 +33,13 @@ export default class QuestionsManager {
             return 'Expected an integer'
         }
         return JSON.parse('{"education":"'+QuestionsManager._fulltimeEducations[id]+'"}')
+    }
+
+    GetReactionsByQuestionId(id){
+        if(!Number.isInteger(id)){
+            return 'Expected an integer'
+        }
+        return JSON.parse('{"reactions": '+QuestionsManager._reaction.filter(r => r.questionId == id)+' }')
     }
 
     GetAllQuestions(){
